@@ -27,12 +27,6 @@
 			margin: 0 auto;
 			}
 
-			h2 {
-			font-size: 2.5rem;
-			margin-bottom: 40px;
-			color: #333;
-			}
-
 			.contact-info {
 			display: flex;
 			justify-content: space-between;
@@ -50,7 +44,7 @@
 
 			.contact-item:hover {
 			transform: translateY(-5px);
-			box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+			box-shadow: 0 10px 30px rgba(33, 3, 202, 0.1);
 			}
 
 			.icon {
@@ -63,31 +57,35 @@
 			text-align: left;
 			}
 
-			.details h3 {
-			font-size: 1.5rem;
-			margin-bottom: 10px;
-			color: #333;
-			}
-
 			.details p {
 			font-size: 1.2rem;
 			color: #666;
 			line-height: 1.6;
 			}
-
-			/* Responsive adjustments */
-			@media (max-width: 768px) {
-			.container {
-				padding: 0 20px;
+		</style>
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+				background-color: #f0f0f0;
+				padding: 20px;
 			}
-			
-			.contact-info {
-				flex-direction: column;
+			.trivia {
+				max-width: 6000px;
+				margin: 0 auto;
+				margin-top: 20px;
+				background-color: #fff;
+				padding: 20px;
+				border: 1px solid #ccc;
+				text-align: left;
 			}
-			
-			.contact-item {
-				margin-bottom: 20px;
+			.message {
+				display: none;
 			}
+			.submit-btn {
+				margin-top: 20px;
+				padding: 3px 16px;
+				display: block; /* Ensures it spans full width */
+				margin: 0 auto; /* Centers horizontally */
 			}
 
 		</style>
@@ -111,7 +109,7 @@
 
 				<!-- Header -->
 					<header id="header">
-						<a href="index.html" class="logo">Tency Trivedi</a>
+						<a href="mailto:tencytrvd@gmail.com" class="logo">Tency Trivedi</a>
 					</header>
 
 				<!-- Nav -->
@@ -122,9 +120,9 @@
 							<li><a href="achievements.html">Achievements</a></li>
 						</ul>
 						<ul class="icons">
-							<li><a href="https://www.linkedin.com/in/tency-t/" class="icon brands alt fa-linkedin"><span class="label">LinnkedIn</span></a></li>
-							<li><a href="https://www.kaggle.com/tencyt" class="icon brands alt fa-kaggle"><span class="label">Kaggle</span></a></li>
-							<li><a href="https://github.com/Tency-T" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>	
+							<li><a href="https://www.linkedin.com/in/tency-t/" class="icon brands alt fa-linkedin" title="LinkedIn"><span class="label">LinnkedIn</span></a></li>
+							<li><a href="https://www.kaggle.com/tencyt" class="icon brands alt fa-kaggle" title="Kaggle"><span class="label">Kaggle</span></a></li>
+							<li><a href="https://github.com/Tency-T" class="icon brands alt fa-github" title="GitHub"><span class="label">GitHub</span></a></li>	
 						</ul>
 					</nav>
 				<!-- Main -->
@@ -244,7 +242,18 @@
 					<footer id="footer">
 						<section id="contact">
 							<div class="container">
-							  <h2>Contact Me</h2>
+							  	<div class="trivia">
+									<h2>Trivia Question:</h2>
+									<p>What does I in the acronym ROI stand for in business? <span id="answer-placeholder"></span>.</p>
+									<input type="text" id="answer" placeholder="Enter your answer"><br>
+									<button class="submit-btn" onclick="checkAnswer()">Submit</button>
+								</div>
+						
+								<div class="message" id="message">
+									<h3>Correct!</h3>
+									<p>Just like a good ROI, investing your time on the right person can yield great results.</p>
+									
+								</div>
 							  <div class="contact-info">
 								<div class="contact-item">
 								  <span class="icon"><i class="fas fa-envelope"></i></span>
@@ -254,18 +263,18 @@
 								  </div>
 								</div>
 								<div class="contact-item">
-								  <span class="icon"><i class="fas fa-phone"></i></span>
-								  <div class="details">
-									<h3>Phone</h3>
-									<p>+91-9409160888</p>
-								  </div>
-								</div>
-								<div class="contact-item">
 								  <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
 								  <div class="details">
 									<h3>Address</h3>
 									<p>SVNIT, Surat, India</p>
 								  </div>
+								</div>
+								<div class="contact-item">
+									<span class="icon solid fa-calendar"></span>
+									<div class="details">
+										<h3>Available</h3>
+										<p>Monday - Friday: 9am - 5pm IST</p>
+									</div>
 								</div>
 							  </div>
 							</div>
@@ -299,35 +308,21 @@
 				}
 			</script>
 			<script>
-				document.getElementById('contactForm').addEventListener('submit', function(event) {
-					event.preventDefault(); // Prevent default form submission
-	
-					// Collect form data
-					let formData = new FormData(this);
-	
-					// Convert FormData to JSON
-					let jsonData = {};
-					formData.forEach(function(value, key) {
-						jsonData[key] = value;
-					});
-	
-					// Prepare CSV content
-					let csvContent = `"Name","Email","Message"\n"${jsonData.name}","${jsonData.email}","${jsonData.message}"\n`;
-	
-					// Create and download CSV file
-					let blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-					let link = document.createElement('a');
-					if (link.download !== undefined) { // feature detection
-						let url = URL.createObjectURL(blob);
-						link.setAttribute('href', url);
-						link.setAttribute('download', 'form_data.csv');
-						link.style.visibility = 'hidden';
-						document.body.appendChild(link);
-						link.click();
-						document.body.removeChild(link);
+				const correctAnswer = 'INVESTMENT'; // Define the correct answer in uppercase
+				const answerPlaceholder = document.getElementById('answer-placeholder');
+		
+				// Initialize the trivia question with underscores as placeholders
+				answerPlaceholder.textContent = '_ '.repeat(correctAnswer.length);
+		
+				function checkAnswer() {
+					const answer = document.getElementById('answer').value.trim().toUpperCase();
+		
+					if (answer === correctAnswer) {
+						document.getElementById('message').style.display = 'block';
+					} else {
+						alert('Incorrect answer. Please try again!');
 					}
-				});
+				}
 			</script>
-
 	</body>
 </html>
