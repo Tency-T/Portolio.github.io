@@ -6,6 +6,83 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			/* Basic styling for contact section */
+			#contact {
+			background-color: #f9f9f9;
+			padding: 80px 0;
+			text-align: center;
+			}
+
+			.container {
+			max-width: 900px;
+			margin: 0 auto;
+			}
+
+			h2 {
+			font-size: 2.5rem;
+			margin-bottom: 40px;
+			color: #333;
+			}
+
+			.contact-info {
+			display: flex;
+			justify-content: space-between;
+			margin-top: 40px;
+			}
+
+			.contact-item {
+			flex: 1;
+			background-color: #fff;
+			padding: 30px;
+			border-radius: 8px;
+			box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+			transition: transform 0.3s ease, box-shadow 0.3s ease;
+			}
+
+			.contact-item:hover {
+			transform: translateY(-5px);
+			box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+			}
+
+			.icon {
+			display: block;
+			font-size: 2rem;
+			margin-bottom: 20px;
+			}
+
+			.details {
+			text-align: left;
+			}
+
+			.details h3 {
+			font-size: 1.5rem;
+			margin-bottom: 10px;
+			color: #333;
+			}
+
+			.details p {
+			font-size: 1.2rem;
+			color: #666;
+			line-height: 1.6;
+			}
+
+			/* Responsive adjustments */
+			@media (max-width: 768px) {
+			.container {
+				padding: 0 20px;
+			}
+			
+			.contact-info {
+				flex-direction: column;
+			}
+			
+			.contact-item {
+				margin-bottom: 20px;
+			}
+			}
+
+		</style>
 	</head>
 	<body class="is-preload">
 
@@ -52,26 +129,24 @@
 						<section class="posts">
 							<article>
 								<header>
-									<span class="date">April 24, 2017</span>
 									<h2><a href="#">Community<br />
 									Engagement Analyzer</a></h2>
 								</header>
 								<a href="#" class="image fit"><img src="images/comm.png" alt="" style="height: 300px; width: auto;"/></a>
-								<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
+								<p>Analyzed social media interactions and sentiment to assess community engagement and identify key areas for improvement.</p>
 								<ul class="actions special">
-									<li><a href="#" class="button">View ></a></li>
+									<li><a href="https://github.com/Tency-T/Community-Engagement-Analyzer" class="button" target="_blank">View ></a></li>
 								</ul>
 							</article>
 							<article>
 								<header>
-									<span class="date">April 22, 2017</span>
 									<h2><a href="#">Sales<br />
 									Dashboard</a></h2>
 								</header>
-								<a href="#" class="image fit"><img src="images/sales.png" alt="" style="height: 300px; width: auto;"/></a>
-								<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
+								<a href="#" class="image fit"><img src="images/sales.png" alt="" style="height: 350px; width: auto;"/></a>
+								<p>Developed an interactive dashboard to track, visualize, and analyze sales performance metrics, enabling data-driven decision-making.</p>
 								<ul class="actions special">
-									<li><a href="#" class="button">View ></a></li>
+									<li><a href="https://github.com/Tency-T/Sales-Dashboard" class="button" target="_blank">View ></a></li>
 								</ul>
 							</article>
 							
@@ -82,55 +157,37 @@
 						</ul>	
 
 				</div>
-
-
+		
 				<!-- Footer -->
 					<footer id="footer">
-						<section>
-							<form method="post" action="#">
-								<h3>Hit Me with Your Business Best!</h3>
-								<div class="fields">
-									<div class="field">
-										<label for="name">Name</label>
-										<input type="text" name="name" id="name" />
-									</div>
-									<div class="field">
-										<label for="email">Email</label>
-										<input type="text" name="email" id="email" />
-									</div>
-									<div class="field">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="3"></textarea>
-									</div>
+						<section id="contact">
+							<div class="container">
+							<h2>Contact Me</h2>
+							<div class="contact-info">
+								<div class="contact-item">
+								<span class="icon"><i class="fas fa-envelope"></i></span>
+								<div class="details">
+									<h3>Email</h3>
+									<p>tencytrvd@gmail.com</p>
 								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</form>
-						</section>
-						<section class="split contact">
-							<section class="alt">
-								<h3>Address</h3>
-								<p>SVNIT, Surat</p>
-							</section>
-							<section>
-								<h3>Phone</h3>
-								<p>+91-9409160888</p>
-							</section>
-							<section>
-								<h3>Email</h3>
-								<p><a href="mailto:tencytrvd@gmail.com">tencytrvd@gmail.com</a><br/>
-									<a href="mailto:u21ce090@ced.svnit.ac.in">u21ce090@ced.svnit.ac.in</a></p>
-							</section>
-							<section>
-								<h3>Social</h3>
-								<ul class="icons alt">
-									<li><a href="https://www.linkedin.com/in/tency-t/" class="icon brands alt fa-linkedin"><span class="label">LinnkedIn</span></a></li>
-									<li><a href="https://www.kaggle.com/tencyt" class="icon brands alt fa-kaggle"><span class="label">Kaggle</span></a></li>
-									<li><a href="https://github.com/Tency-T" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-								</ul>
-							</section>
-						</section>
+								</div>
+								<div class="contact-item">
+								<span class="icon"><i class="fas fa-phone"></i></span>
+								<div class="details">
+									<h3>Phone</h3>
+									<p>+91-9409160888</p>
+								</div>
+								</div>
+								<div class="contact-item">
+								<span class="icon"><i class="fas fa-map-marker-alt"></i></span>
+								<div class="details">
+									<h3>Address</h3>
+									<p>SVNIT, Surat, India</p>
+								</div>
+								</div>
+							</div>
+							</div>
+						</section>	
 					</footer>
 
 				<!-- Copyright -->

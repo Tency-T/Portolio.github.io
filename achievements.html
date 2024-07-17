@@ -7,6 +7,83 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <style>
+        /* Basic styling for contact section */
+        #contact {
+        background-color: #f9f9f9;
+        padding: 80px 0;
+        text-align: center;
+        }
+
+        .container {
+        max-width: 900px;
+        margin: 0 auto;
+        }
+
+        h2 {
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+        color: #333;
+        }
+
+        .contact-info {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 40px;
+        }
+
+        .contact-item {
+        flex: 1;
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .icon {
+        display: block;
+        font-size: 2rem;
+        margin-bottom: 20px;
+        }
+
+        .details {
+        text-align: left;
+        }
+
+        .details h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        color: #333;
+        }
+
+        .details p {
+        font-size: 1.2rem;
+        color: #666;
+        line-height: 1.6;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+        .container {
+            padding: 0 20px;
+        }
+        
+        .contact-info {
+            flex-direction: column;
+        }
+        
+        .contact-item {
+            margin-bottom: 20px;
+        }
+        }
+
+    </style>
 </head>
 <body class="is-preload">
     <!-- Wrapper -->
@@ -89,7 +166,39 @@
                     </article>
                 </div>
             </section>
+        </div>
             
+            <footer id="footer">
+                <section id="contact">
+                    <div class="container">
+                      <h2>Contact Me</h2>
+                      <div class="contact-info">
+                        <div class="contact-item">
+                          <span class="icon"><i class="fas fa-envelope"></i></span>
+                          <div class="details">
+                            <h3>Email</h3>
+                            <p>tencytrvd@gmail.com</p>
+                          </div>
+                        </div>
+                        <div class="contact-item">
+                          <span class="icon"><i class="fas fa-phone"></i></span>
+                          <div class="details">
+                            <h3>Phone</h3>
+                            <p>+91-9409160888</p>
+                          </div>
+                        </div>
+                        <div class="contact-item">
+                          <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
+                          <div class="details">
+                            <h3>Address</h3>
+                            <p>SVNIT, Surat, India</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                  
+            </footer>
 
     <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>
